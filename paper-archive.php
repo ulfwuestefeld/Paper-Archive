@@ -3,10 +3,11 @@
 Plugin Name: Paper Archive
 Plugin URI: https://www.wuesti.eu/wp-paperarchive
 Description: Lists PDF files from media gallery based on a category.
-Version: 1.0
+Version: 1.1
 Author: Ulf Wüstefeld
 Author URI: https://www.wuesti.eu
 License: GPLv2
+Update URI: https://github.com/ulfwuestefeld/Paper-Archive/blob/main/plugins-info.json
 */
 
 /* shortcode */
