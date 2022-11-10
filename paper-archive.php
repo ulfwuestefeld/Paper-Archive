@@ -10,14 +10,40 @@ License: GPLv2
 Update URI: https://github.com/ulfwuestefeld/Paper-Archive/blob/main/plugins-info.json
 */
 
-/* shortcode */
+/* update */
+if( ! function_exists( 'my_plugin_check_for_updates' ) ){
+    
+    function my_plugin_check_for_updates( $update, $plugin_data, $plugin_file ){
+        
+        static $response = false;
+        
+        if( empty( $plugin_data['UpdateURI'] ) || ! empty( $update ) )
+            return $update;
+        
+        if( $response === false )
+            $response = wp_remote_get( $plugin_data['UpdateURI'] );
+        
+        if( empty( $response['body'] ) )
+            return $update;
+        
+        $custom_plugins_data = json_decode( $response['body'], true );
+        
+        if( ! empty( $custom_plugins_data[ $plugin_file ] ) )
+            return $custom_plugins_data[ $plugin_file ];
+        else
+            return $update;
+        
+    }
+    
+    add_filter('update_plugins_github.com', 'my_plugin_check_for_updates', 10, 3);
+    
+}
 
+/* shortcode */
 function fn_pdffiles($atts, $content = null)
 {
 	extract(shortcode_atts(array("width" => 640,"height" => 480,"src" => 'https://www.google.de/maps/@51.6691329,6.6196191,17.5z'), $atts));
  
-	/*$pdffiles = array("https://neu.bsv-wesel.de/wp-content/uploads/2018/08/2020-2021.pdf","https://neu.bsv-wesel.de/wp-content/uploads/2018/08/2017.pdf","https://neu.bsv-wesel.de/wp-content/uploads/2018/08/2018.pdf","https://neu.bsv-wesel.de/wp-content/uploads/2018/08/2019.pdf");*/
-
 	$args = array(
 		'post_type' => 'attachment',
 		'post_mime_type' => 'application/pdf',
