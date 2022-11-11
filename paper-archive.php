@@ -1,13 +1,13 @@
 <?php
-/*
+/**
 Plugin Name: Paper Archive
 Plugin URI: https://www.wuesti.eu/wp-paperarchive
-Description: Lists PDF files from media gallery based on a category.
+Description: Lists PDF files from media gallery based on a conected page.
 Version: 1.1
 Author: Ulf Wüstefeld
 Author URI: https://www.wuesti.eu
 License: GPLv2
-Update URI: https://github.com/ulfwuestefeld/Paper-Archive/blob/main/plugins-info.json
+Update URI: https://www.wuesti.eu/paper-archive/paper-archive.json
 */
 
 /* update */
@@ -35,7 +35,7 @@ if( ! function_exists( 'my_plugin_check_for_updates' ) ){
         
     }
     
-    add_filter('update_plugins_github.com', 'my_plugin_check_for_updates', 10, 3);
+    add_filter('update_plugins_wuesti.eu', 'my_plugin_check_for_updates', 10, 3);
     
 }
 
