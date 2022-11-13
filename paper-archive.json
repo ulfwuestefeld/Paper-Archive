@@ -1,7 +1,21 @@
 {
-    "paper-archive/paper-archive.php":
-    {
-        "version":"1.1",
-        "package":"https://github.com/ulfwuestefeld/Paper-Archive/archive/refs/tags/1.1.zip"
+    "name" : "Paper Archive",
+    "slug" : "paperarchive",
+    "author" : "<a href='https://rudrastyh.com'>Misha Rudrastyh</a>",
+    "author_profile" : "http://profiles.wordpress.com/ulfwuestefeld",
+    "version" : "1.2",
+    "download_url" : "https://www.wuesti.eu/paper-archive/paper-archive.zip",
+    "requires" : "3.0",
+    "tested" : "6.1",
+    "requires_php" : "7.0",
+    "last_updated" : "2022-11-13 00:00:00",
+    "sections" : {
+        "description" : "Lists PDF files from media gallery based on a conected page.",
+        "installation" : "Click the activate button and that's it.",
+        "changelog" : "<h4>1.2 –  13 nov 2022</h4><ul><li>Added autoupdating</li></ul><h4>1.0 –  9 nov 2022</h4><ul><li>Initital release.</li></ul>"
+    },
+    "banners" : {
+        "low" : "https://www.wuesti.eu/paper-archive/banner/banner-772x250.jpg",
+        "high" : "https://www.wuesti.eu/paper-archive/banner/banner-1544x500.jpg"
     }
 }
