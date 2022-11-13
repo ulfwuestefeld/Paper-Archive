@@ -13,7 +13,7 @@ Update URI: https://www.wuesti.eu/paper-archive/paper-archive.json
 /* shortcode */
 function fn_pdffiles($atts, $content = null)
 {
-	extract(shortcode_atts(array("width" => 640,"height" => 480,"src" => 'https://www.google.de/maps/@51.6691329,6.6196191,17.5z'), $atts));
+	extract(shortcode_atts(array("cols" => 3,"filetype" => 'application/pdf'), $atts));
  
 	$args = array(
 		'post_type' => 'attachment',
